@@ -12,8 +12,9 @@
   </head>
 
   <body class="page-body">
-    <div class="content">
-      <header class="header header-content">
+
+    <header class="header content">
+      <div class="header-content">
         <a class="main-logo"><img src="./assets/svg/logo.svg" width="163" height="35" alt="Логотип интернет-магазина 'Девайс'."></a>
         <div class="header-top-line">
           <form class="search-header" action="https://echo.htmlacademy.ru/">
@@ -45,16 +46,17 @@
       
           </ul>
         </nav>
-      </header>
+      </div>
+    </header>
       
-      <main class="container">
-        <h1 class="visually-hidden">Главная страница интернет-магазина "Device"</h1>
+    <main class="container">
+      <h1 class="visually-hidden">Главная страница интернет-магазина "Device"</h1>
   
-        <section class="slider">
-          <h2 class="visually-hidden">Популярные товары</h2>
-          <div>
-            <div class="slider-item">
-              <div>
+      <section class="slider content">
+        <h2 class="visually-hidden">Популярные товары</h2>
+          <div class="sliders">
+            <div class="slider-item slider-active">
+              <div class="slider-img">
                 <img src="./assets/img/slider_3.png" width="526" height="334" alt="квадрокоптер оснащенный мощным лазером.">
               </div>
               <div>
@@ -65,11 +67,11 @@
                   Этот обычный, на&nbsp; первый взгляд, квадрокоптер оснащен 
                   мощным лазером, замаскированным pпод стандартную камеру.
                 </p>
-                <a class="button" href="blank.html">Подробнее</a>
+                <a class="button btn-slider" href="blank.html">Подробнее</a>
                 <table class="slider-table">
                   <tr>
-                    <td>800 м</td>
-                    <td>50 м</td>
+                    <td class="slider-table-title">800 м</td>
+                    <td class="slider-table-title">50 м</td>
                   </tr>
                   <tr>
                     <th>Дальность полета</th>
@@ -78,8 +80,10 @@
                 </table>
               </div>
             </div>
-            <div class="slider-item slider-hidden">
-              <img src="./assets/img/slider_2.png" width="345" height="483" alt="фитнес-браслет.">
+            <div class="slider-item">
+              <div class="slider-img">
+                <img src="./assets/img/slider_2.png" width="345" height="483" alt="фитнес-браслет.">
+              </div>
               <h3>
                 Худеем правильно!
               </h3>
@@ -97,8 +101,10 @@
                 </tr>
               </table>
             </div>
-            <div class="slider-item slider-hidden">
-              <img src="./assets/img/slider_1.png" width="384" height="486" alt="Длинная палка для селфи.">
+            <div class="slider-item">
+              <div class="slider-img">
+                <img src="./assets/img/slider_1.png" width="384" height="486" alt="Длинная палка для селфи.">
+              </div>
               <h3>
                 Делай селфи, как Бен Стиллер! 
               </h3>
@@ -126,9 +132,9 @@
             <li></li>
             <li></li>
           </ul>
-        </section>
-        <section class="popular">
-          <h2 class="visually-hidden">Категории товаров</h2>
+      </section>
+      <section class="popular content">
+        <h2 class="visually-hidden">Категории товаров</h2>
           <ul class="popular-list">
             <li class="popular-item">
               <a href="#"><span></span><p>Виртуальная реальность</p></a>
@@ -152,12 +158,11 @@
               </a>
             </li>
           </ul>
-        </section>
-        </div>
-        <section class="services-background">
+      </section>
+      <section class="services-background">
           <h2 class="visually-hidden">Наши сервисы и услуги</h2>
           <div class="content services">
-            <div>
+            <div class="services-nav-wrap">
               <ul class="services-nav">
                 <li>
                   <a class="button button-services" href="">Доставка</a>
@@ -172,7 +177,7 @@
             </div>
             <div class="services-list">
     
-                <div class="services-item">
+                <div class="services-item services-active">
                   <h3 class="title">Доставка</h3>
                   <p class="services-text">
                     Мы с удовольствием доставим ваш товар прямо к вашему 
@@ -182,7 +187,7 @@
                   <img class="services-img" src="./assets/svg/icon_delivery.svg" width="156" height="188" alt="">
                 </div>
     
-                <div class="services-item services-hidden">
+                <div class="services-item">
                   <h3 class="title">Гарантия</h3>
                   <p>
                     Если из-за возгорания купленного у нас товара у вас сгорит дом — 
@@ -191,7 +196,7 @@
                   </p>
                 </div>
     
-                <div class="services-item services-hidden">
+                <div class="services-item">
                   <h3 class="title">Кредит</h3>
                   <p>
                     Залезть в долговую яму стало проще! Кредитные консультанты 
@@ -202,10 +207,9 @@
      
             </div>
           </div>
-        </section>
+      </section>
   
-      <div class="wrapper">
-        <section class="brands">
+      <section class="brands content">
           <h2 class="visually-hidden">Бренды</h2>
           <ul class="brands-list">
             <li>
@@ -229,9 +233,9 @@
               </a>
             </li>
           </ul>
-        </section>
+      </section>
   
-        <div class="container-column">
+      <div class="container-column content">
           <section class="about-us">
             <h2 class="title">О нас</h2>
             <div class="about-us-content">
@@ -244,9 +248,9 @@
                 России! DEVICE работает со многими транспортными компаниями:
               </p>
               <ul class="delivery-list">
-                <li>Деловые линии</li>
-                <li>Автотрейдинг</li> 
-                <li>ЖелДорЭкспедиция</li>
+                <li class="delivery-item">Деловые линии</li>
+                <li class="delivery-item">Автотрейдинг</li> 
+                <li class="delivery-item">ЖелДорЭкспедиция</li>
               </ul>
             </div>
             <a class="button" href="#">Подробнее о нас</a>   
@@ -260,25 +264,24 @@
                 проверить работоспособность покупки. Всякое бывает.
               </p>
               <a href="">
-                <img src="./assets/img/map.jpg" width="560" height="222" alt="г. Москва, ул. Строителей, 15.">
+                <img class="contacts-content-map" src="./assets/img/map.jpg" width="560" height="222" alt="г. Москва, ул. Строителей, 15.">
               </a>
             </div>
             <a class="button" href="#">Напишите нам</a>
           </section>
   
-        </div>
-      </main>
-    </div>
- 
+      </div>
+    </main>
+
     <footer class="footer">
-      <div class="content">
+      <div class="content footer-wrapper">
         <div class="top-line-footer">
           <a class="main-logo-footer"><img src="./assets/svg/logo.svg" width="163" height="35" alt="Логотип интернет-магазина 'Девайс'.">
           </a>
-          <ul class="options-nav opacity-footer">
-            <li><a href="#">Войти</a></li>
-            <li><a href="#">Сравнить</a></li>
-            <li><a href="#">Корзина</a></li>
+          <ul class="options-nav options-footer opacity-footer">
+            <li class="options-footer-item"><a href="#">Войти</a></li>
+            <li class="options-footer-item"><a href="#">Сравнить</a></li>
+            <li class="options-footer-item"><a href="#">Корзина</a></li>
           </ul>
         </div>
   
