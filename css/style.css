@@ -353,6 +353,10 @@ img {
     border: 2px solid var(--transparent);
     height: 50px;
 }
+.search-header:focus-within .button-header {
+    display: block;
+    border-bottom: 2px solid var(--basic-black);
+}
 
 .search-header-field:focus,
 .search-header-field:focus-within {
@@ -1211,8 +1215,8 @@ img {
     text-align: left;
     width: 70px;
     padding: 10px 0;
-    margin-left: 0;
-    text-align: center;
+    margin-left: 4px;
+    text-align: left;
     border: none;
     background-color: var(--transparent);
     font-family: inherit;
@@ -1233,7 +1237,7 @@ img {
 
 .form-item label{
     position: relative;
-    display: block;
+    display: inline-block;
     cursor: pointer;
     user-select: none;
 }
@@ -1248,6 +1252,11 @@ img {
 .filter-input-radio:checked:focus + label::after
  {
     opacity: 60%;
+}
+
+.filter-input-checkbox:focus + label,
+.filter-input-radio:focus + label {
+    outline: 4px solid var(--basic-dark);
 }
 
 .filter-input-checkbox + label::before {
@@ -1656,6 +1665,7 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--basic-white);
+    z-index: 100;
 }
 
 .modal-btn {

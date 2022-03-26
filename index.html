@@ -29,10 +29,15 @@
             action="https://echo.htmlacademy.ru/"
             target="_blank"
           >
+            <label class="visually-hidden" for="search-header"
+              >Поиск по сайту.</label
+            >
             <input
               class="search-header-field"
               type="text"
               placeholder="Поиск по сайту"
+              id="search-header"
+              name="search"
             />
             <button class="button-header" type="submit">Найти</button>
           </form>
@@ -202,8 +207,8 @@
                   width="97"
                   height="55"
               /></span>
+              <p>Виртуальная реальность</p>
             </a>
-            <a href="#"><p>Виртуальная реальность</p></a>
           </li>
           <li class="popular-item">
             <a href="catalog.html">
@@ -476,7 +481,6 @@
           <ul class="social-list opacity-footer">
             <li>
               <a class="social-item" href="#"
-                ><span class="visually-hidden">Facebook</span
                 ><img
                   src="./assets/svg/icon_facebook.svg"
                   width="32"
@@ -486,7 +490,6 @@
             </li>
             <li>
               <a class="social-item" href="#"
-                ><span class="visually-hidden">instagram</span
                 ><img
                   src="./assets/svg/icon_instagram.svg"
                   width="32"
@@ -495,8 +498,7 @@
               /></a>
             </li>
             <li>
-              <a class="social-item" href="#">
-                <span class="visually-hidden">Twitter</span
+              <a class="social-item" href="#"
                 ><img
                   src="./assets/svg/icon_twitter.svg"
                   width="32"
@@ -526,13 +528,16 @@
         loading="lazy"
         title="адрес магазина по адресу г. Москва, ул. Строителей, 15"
       ></iframe>
-      <button class="modal-btn btn-close-map" aria-label="Закрыть"></button>
+      <button
+        class="modal-btn btn-close-map"
+        aria-label="Закрыть карту."
+      ></button>
     </section>
     <section class="modal modal-contacts">
       <h2 class="visually-hidden">Форма для связи</h2>
       <button
         class="modal-btn btn-close-contacts"
-        aria-label="Закрыть"
+        aria-label="Закрыть форму обратной связи."
       ></button>
       <form
         class="login-form"
