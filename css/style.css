@@ -1254,8 +1254,8 @@ img {
     opacity: 60%;
 }
 
-.filter-input-checkbox:focus + label,
-.filter-input-radio:focus + label {
+.filter-input-checkbox:focus-within + label,
+.filter-input-radio:focus-within + label {
     outline: 4px solid var(--basic-dark);
 }
 
@@ -1698,10 +1698,18 @@ img {
     height: 572px;
 }
 
+.modal-map-open {
+    display: block;
+}
+
 .modal-contacts {
     display: none;
     width: 960px;
     height: 550px;
+}
+
+.modal-contacts-open {
+    display: block;
 }
 
 .btn-form {
@@ -1768,6 +1776,9 @@ img {
     color: var(--basic-dark);
 }
 
+.form-field-invalid {
+    background-color: var(--status-color);
+}
 
 .form-field-textarea {
     resize: none;
