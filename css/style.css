@@ -252,6 +252,10 @@ img {
     grid-template-columns: repeat(6, 1fr);
 }
 
+.catalog-links {
+    width: fit-content;
+}
+
 .catalog-links:hover,
 .catalog-links:focus,
 .catalog-links:focus-within {
@@ -419,11 +423,11 @@ img {
     display: none;
     grid-template-columns: repeat(2, 1fr);
     position: relative;
-
 }
 
 .slider-active {
     display: grid;
+    transition: 0.5 ease-in-out;
 }
 
 .slider-item h3 {
@@ -1254,8 +1258,8 @@ img {
     opacity: 60%;
 }
 
-.filter-input-checkbox:focus-within + label,
-.filter-input-radio:focus-within + label {
+.filter-input-checkbox:focus-visible + label,
+.filter-input-radio:focus-visible + label {
     outline: 4px solid var(--basic-dark);
 }
 
@@ -1700,6 +1704,11 @@ img {
 
 .modal-map-open {
     display: block;
+}
+
+.modal-scroll {
+    height: 100%;
+    overflow: hidden;
 }
 
 .modal-contacts {
