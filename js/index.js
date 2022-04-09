@@ -9,14 +9,14 @@ mapSelect.addEventListener('click', function(evt) {
     evt.preventDefault();
     mapOpen.classList.add('modal-map-open');
     scroll.classList.add('modal-scroll');
-    // document.body.style.overflow = 'hidden';
 });
+
 
 btnMapClose.addEventListener('click', () => {
     mapOpen.classList.remove('modal-map-open');
     scroll.classList.remove('modal-scroll');
-    // document.body.style.overflowY = 'auto';
 });
+
 
 window.addEventListener('keydown', function(evt) {
     if (evt.key === "Escape") {
@@ -37,8 +37,9 @@ const btnContactClose = document.querySelector('.btn-close-contacts');
 const login = contactFormOpen.querySelector('[name="name"]');
 const email = contactFormOpen.querySelector('[name="login"]')
 const form = contactFormOpen.querySelector('.login-form');
+
 let isStorageSupport = true;
-const storage = '';
+let storage = '';
 
 
 try {
@@ -47,28 +48,6 @@ try {
 catch(err) {
     isStorageSupport = false;
 }
-
-btnContact.addEventListener('click', function(evt) {
-    evt.preventDefault();
-    contactFormOpen.classList.add('modal-contacts-open');
- 
-    scroll.classList.add('modal-scroll');
-    if (storage) {
-        login.value = storage;
-        email.focus();
-    }
-    else {
-        login.focus();
-    }
-})
-
-btnContactClose.addEventListener('click', () => {
-    contactFormOpen.classList.remove('modal-contacts-open');
-    scroll.classList.remove('modal-scroll');
-    email.classList.remove('form-field-invalid');
-    login.classList.remove('form-field-invalid');
-
-})
 
 form.addEventListener('submit', function(evt) {
     if (!login.value || !email.value) {
@@ -80,10 +59,37 @@ form.addEventListener('submit', function(evt) {
     }
     else {
         if (isStorageSupport) {
+            console.log('set');
             localStorage.setItem('login', login.value);
         }
     }
 })
+
+
+btnContact.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    contactFormOpen.classList.add('modal-contacts-open');
+    scroll.classList.add('modal-scroll');
+
+    if (storage) {
+        login.value = storage;
+        email.focus();
+        console.log('storage')
+    }
+    else {
+        login.focus();
+    }
+})
+
+
+btnContactClose.addEventListener('click', () => {
+    contactFormOpen.classList.remove('modal-contacts-open');
+    scroll.classList.remove('modal-scroll');
+    email.classList.remove('form-field-invalid');
+    login.classList.remove('form-field-invalid');
+
+})
+
 
 // main slider
 const sliderButtons = document.querySelectorAll('.slider-slider-btn');
@@ -96,6 +102,7 @@ const currentSlide = ind => {
     activeSlide(ind);
 }
 
+
 const activeButton = n => {
     for (button of sliderButtons) {
         button.classList.remove('slider-btn-current');
@@ -103,12 +110,14 @@ const activeButton = n => {
     sliderButtons[n].classList.add('slider-btn-current');
 }
 
+
 const activeSlide = n => {
-    for (slide of sliders) {
+    for(slide of sliders) {
         slide.classList.remove('slider-active');
     }
     sliders[n].classList.add('slider-active');
 }
+
 
 const nextSlide = () => {
     if(index === sliders.length - 1) {
@@ -121,6 +130,7 @@ const nextSlide = () => {
     }
 }
 
+
 // const prevSlide = () => {
 //     if(index === 0) {
 //         sliders.length - 1;
@@ -132,7 +142,9 @@ const nextSlide = () => {
 //     }
 // }
 
-// setInterval(nextSlide, 5000);
+
+setInterval(nextSlide, 5000);
+
 
 sliderButtons.forEach((button, indexButton) => {button.addEventListener('click', () => {
     index = indexButton;
@@ -158,18 +170,15 @@ function changeService(event) {
     servicesButtons.forEach((button) => button.classList.remove('button-services-active'))
     event.target.classList.toggle('button-services-active');
     if (btnServices1.classList.contains('button-services-active')) {
-        console.log('1')
         servicesCards.forEach((card) => card.classList.remove('services-active'))
         servicesDelivery.classList.add('services-active')
 
     }
     else if (btnServices2.classList.contains('button-services-active')) {
-        console.log('2')
         servicesCards.forEach((card) => card.classList.remove('services-active'))
         servicesGuarantee.classList.add('services-active')
     }
     else {
-        console.log('3')
         servicesCards.forEach((card) => card.classList.remove('services-active'))
         servicesCredit.classList.add('services-active')
     }
